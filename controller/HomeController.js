@@ -1,13 +1,37 @@
 class HomeController {
 
-    async index(req,res){
+    index(req,res){
        return res
                 .render("index");
     }
 
-    async login(req,res){
+    login(req,res){
         return res
                 .render("login");
+    }
+
+    newCar(req,res){
+        
+    }
+
+    dealers(req,res){
+
+    }
+
+    post_ad(req,res){
+
+    }
+
+    request_car(req,res){
+
+    }
+
+    trade_in(req,res){
+
+    }
+
+    get_alert(req,res){
+
     }
 
 }
