@@ -1,0 +1,77 @@
+@layout('./layout/layout')
+
+@section('html_content')
+    @include('./layout/navbar')
+    <div class="container">
+            <ul class="nav nav-tabs sign-tabs" id="sign-tabs">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#sign-in">Sign In</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#sign-up">Sign Up</a>
+                </li>
+            </ul>
+        
+            <div class="contents">
+                <div class="sign-action" id="sign-in">
+                    <form action="/api/v1/auth/signin" method="POST" class="form-signin">
+                            <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+
+                            <label for="inputEmail" class="sr-only">Email address</label>
+                            <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required="" autofocus="">
+
+                            <label for="inputPassword" class="sr-only">Password</label>
+                            <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="">
+                            
+                            <div class="checkbox mb-3">
+                              <label>
+                                <input type="checkbox" value="remember-me"> Remember me
+                              </label>
+                            </div>
+                            <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+                            {{--  <p class="mt-5 mb-3 text-muted">© 2017-2018</p>  --}}
+                    </form>
+                </div>
+                
+                <div class="sign-action display-none" id="sign-up">
+                    <form action="/api/v1/register" method="POST" class="form-signin" id="registerKls">
+                        
+                        <h1 class="h3 mb-3 font-weight-normal">Please sign Up</h1>
+                            @if(flash.error_regiter)
+                                <div class="alert alert-danger" role="alert">
+                                    {{flash.error_regiter}}
+                                </div>
+                            @elseif(flash.success_regiter)
+                                <div class="alert alert-success" role="alert">
+                                    {{flash.success_regiter}}
+                                </div>
+                            @endif
+                        <div class="form-row">
+                            <div class="form-group col-md-12">
+                                <input type="email" name="email" class="form-control" placeholder="Email">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-12">
+                                <input type="text" name="first_name" class="form-control" placeholder="First Name">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="last_name" class="form-control" placeholder="Last Name">
+                        </div>
+
+                        <div class="form-group">
+                            <input type="password" name="password" class="form-control" placeholder="Password">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="address" class="form-control" placeholder="Address">
+                        </div>
+                        <input type="hidden" name="urlOrigin" id="urlOrigin">
+                        <button type="submit" class="btn btn-primary">Sign Up</button>
+                    </form>
+                </div>
+            </div>
+    </div>
+
+    {{--  <p class="mt-5 mb-3 text-muted">© 2017-2018</p>  --}}
+@endsection

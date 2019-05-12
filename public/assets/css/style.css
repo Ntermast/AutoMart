@@ -1,0 +1,26 @@
+.form-signin {
+    width: 100%;
+    max-width: 450px;
+    padding: 15px;
+    margin: auto;
+}
+
+.form-signin input{
+    margin-bottom: 15px;
+}
+
+.sign-tabs{
+    width: 100%;
+    max-width: 450px;
+    padding: 15px;
+    padding-top: 90px;
+    margin: auto;
+}
+
+.display-none{
+    display: none;
+}
+
+.sign-action{
+    transition: opacity 2s ease-in-out;
+}
