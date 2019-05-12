@@ -22,6 +22,16 @@ class Users{
     get getUsers(){
         return User;
     }
+
+    async getUser(UserId){
+        let found = false;
+        for (const u of User) {
+            if (u.id == UserId) {
+                found = u;
+            }
+        }
+        return found;
+    }
     
 }
 

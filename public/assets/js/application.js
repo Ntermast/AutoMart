@@ -45,10 +45,14 @@
         }
     };
     tabs();
-    document.querySelector("#registerKls")
-    .addEventListener("submit",function(){
-        this.querySelector("#urlOrigin")
-        .value = window.location.href;
+
+    var d = document.querySelectorAll(".form-signin");
+    d.forEach(function(e){
+        e.addEventListener("submit",function(){
+            this.querySelector("#urlOrigin")
+            .value = window.location.href;
+        });
     });
+
 
 })(document);

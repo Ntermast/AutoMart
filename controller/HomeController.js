@@ -8,8 +8,6 @@ class HomeController {
     }
 
     async login(req,res){
-        console.log(User.getUsers);
-        
         return res
                 .render("login");
     }
