@@ -90,10 +90,17 @@ class LogController{
                 .redirect(users.urlOrigin); 
         }
 
-        req.flash("success_login","Correct ");
+        req.session.UserAuth = found;
         return res
             .status(200)
-            .redirect(users.urlOrigin); 
+            .redirect("/"); 
+    }
+
+    logOut(req,res){
+        req.session.destroy(err => {
+            if (err) throw err;
+            res.redirect("/login");
+        });
     }
 }
 

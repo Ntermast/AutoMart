@@ -1,19 +1,20 @@
-const express = require("express");
-const router = express.Router();
+const router = require("express").Router();
 
-const Logged = express.Router();
-const  NotLogged = express.Router();
 
 router.get("/", uses("controller/HomeController.index"));
 
-NotLogged.use(uses("controller/guard/Auth.isLogged"));
-NotLogged.get("/login", uses("controller/HomeController.login"));
+// Not Logged
+router.use("/login",uses("controller/guard/Auth.isLogged"));
+router.get("/login", uses("controller/HomeController.login"));
 
+//is Logged
+router.use("/auth/logout",uses("controller/guard/Auth.notLogged"));
+router.get("/auth/logout",uses("controller/LogController.logOut"));
 
-router.post("/api/v1/register", uses("controller/LogController.register"));
+// Api
+
+router.post("/api/v1/auth/register", uses("controller/LogController.register"));
 router.post("/api/v1/auth/signin", uses("controller/LogController.login"));
 
-router.use(Logged);
-router.use(NotLogged);
 
 module.exports = router;

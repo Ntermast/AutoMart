@@ -1,5 +1,3 @@
-const User = uses("model/Users");
-
 class HomeController {
 
     async index(req,res){

@@ -28,9 +28,19 @@
                 <li class="nav-item">
                     <a class="nav-link" data-href-active="/get_alert" href="/get_alert">Get Alerts</a>
                 </li>
+                @if(UserAuth)
                 <li class="nav-item">
-                    <a class="nav-link" data-href-active="/login" href="/login">Login</a>
+                    <a class="nav-link" data-href-active="/auth/logout" href="/auth/logout">Log Out</a>
                 </li>
+                <li class="nav-item active">
+                    <a class="nav-link">{{UserAuth.first_name}} {{UserAuth.last_name}}</a>
+                </li>
+                @else
+                <li class="nav-item">
+                    <a class="nav-link" data-href-active="/login" href="/login">Sign In</a>
+                </li>
+                @endif
+
             </ul>
         </div>
     </div>
