@@ -22,8 +22,8 @@ router.get("/request_car",uses("controller/HomeController.request_car"));
 router.get("/trade_in",uses("controller/HomeController.trade_in"));
 
 router.get("/get_alert",uses("controller/HomeController.get_alert"));
-// Api
 
+// Api
 router.post("/api/v1/auth/register", uses("controller/LogController.register"));
 router.post("/api/v1/auth/signin", uses("controller/LogController.login"));
 
