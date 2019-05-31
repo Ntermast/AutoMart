@@ -6,12 +6,12 @@ const User = [{
             id: 1,
             token: token,
             email: "admin@gmail.com",
-            first_name: "Admin Name",
-            last_name: "Admin LastName",
+            first_name: "Gabriel",
+            last_name: "Tera",
             password: hash.hashSync("admin",10),
             address: "Admin Adress",
             is_admin: true
-    }];
+        }];
 
 class Users{
     

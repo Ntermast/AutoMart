@@ -1,6 +1,10 @@
+const User = uses("model/Users");
+
 class HomeController {
 
     index(req,res){
+    console.log(User.getUsers);
+
        return res
                 .render("index");
     }
