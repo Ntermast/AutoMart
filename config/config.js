@@ -4,15 +4,6 @@ const path = require("path");
 const bodyParser = require("body-parser");
 const session = require("express-session");
 
-global.uses = (string) => {
-    const str = string.split(".");
-    const c = require(path.resolve(str[0]));
-    const f = new c();
-    if (!f[str[1]]) {
-        return f;
-    }
-    return f[str[1]];
-};
 
 const config = {
     register(){
